@@ -1,0 +1,12 @@
+.panel {
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    border: 2px solid green;
+    width: fit-content;
+    padding: 10px;
+}
+
+.panel > * {
+    margin: 5px;
+}

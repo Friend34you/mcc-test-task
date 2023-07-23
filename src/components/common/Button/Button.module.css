@@ -1,0 +1,13 @@
+.button {
+    width: fit-content;
+    padding: 5px;
+    border: 2px solid green;
+    background-color: transparent;
+    transition: .15s linear;
+    color: green;
+}
+
+.button:hover {
+    background-color: green;
+    color: white;
+}
