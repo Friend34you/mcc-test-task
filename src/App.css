@@ -10,9 +10,14 @@
 }
 
 .App__input {
+  padding: 5px;
   border: green 2px solid;
 }
 
 .App__input[placeholder] {
   opacity: 70%;
+}
+
+.App__error {
+  color: red;
 }

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "0",
+    "name": "Node1",
+    "children": [
+      {
+        "id": "0-0",
+        "name": "Node1-1"
+      },
+      {
+        "id": "0-1",
+        "name": "Node1-2"
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "name": "NotNODE",
+    "children": [
+      {
+        "id": "1-0",
+        "name": "NotNODE-1"
+      },
+      {
+        "id": "1-1",
+        "name": "NotHEHE",
+        "children":
+        [
+          {
+            "id": "1-1-0",
+            "name": "HIHIHAHA"
+          }
+        ]
+      }
+    ]
+  }
+]

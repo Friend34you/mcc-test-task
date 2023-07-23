@@ -10,7 +10,7 @@ export function replaceNode(nodeTree: TreeStructure[], nodeObj: TreeStructure): 
             if (node.id === nodeObj.id) {
                 return ({...nodeObj})
             }
-            if (typeof node.children !== "undefined") {
+            if (Array.isArray(node.children)) {
                 return ({...node, children: replaceNode(node.children, nodeObj)})
             }
             return node
