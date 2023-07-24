@@ -62,11 +62,16 @@ export function useApp(treeData: TreeStructure[]) {
         setErrorValue("");
     }
 
-    function handleChangeInputValue(e: React.ChangeEvent<HTMLInputElement>) {
+    function handleChangeInputValue(e: React.ChangeEvent<HTMLInputElement>, maxLength: number = 20) {
+        if (e.target.value.length >= maxLength) {
+            setErrorValue(`max node name length is ${maxLength}` )
+            return;
+        }
+
         setInputValue(e.target.value);
     }
 
-    function handleFocusInputValue (e: React.FocusEvent<HTMLInputElement>) {
+    function handleFocusInputValue(e: React.FocusEvent<HTMLInputElement>) {
         e.target.select()
     }
 

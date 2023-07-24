@@ -18,7 +18,8 @@ function App() {
         handleRemoveNode,
         handleEditNodeName,
         handleAddNode
-    } = handlers
+    } = handlers;
+
     return (
         <div className="App">
             {tree.length === 0 &&
@@ -32,7 +33,7 @@ function App() {
                     placeholder={"edit/create node"}
                     type={"search"}
                     value={inputValue}
-                    onChange={handleChangeInputValue}
+                    onChange={(e) => handleChangeInputValue(e, 45)}
                     onFocus={handleFocusInputValue}
                 />
                 <ButtonsPanel

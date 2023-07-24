@@ -2,9 +2,8 @@
   box-sizing: content-box;
   text-align: center;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   height: 80vh;
   border-bottom: green 2px solid;
   overflow: auto;
@@ -12,10 +11,10 @@
 }
 
 .App__interactive {
+  bottom: 0;
   position: fixed;
   display: flex;
   flex-direction: column;
-  bottom: 0;
 }
 
 .App__interactive > * {
