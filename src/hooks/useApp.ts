@@ -8,7 +8,7 @@ import {TreeStructure} from "../models/TreeStructure";
 export function useApp(treeData: TreeStructure[]) {
     const [tree, setTree] = useState(deepCopy(treeData))
     const [currentNode, setCurrentNode] = useState(tree[0])
-    const [inputValue, setInputValue] = useState("")
+    const [inputValue, setInputValue] = useState("Node")
     const [errorValue, setErrorValue] = useState("")
 
     function handleAddNode() {
@@ -21,7 +21,7 @@ export function useApp(treeData: TreeStructure[]) {
         const newTree = replaceNode(tree, newNode);
         setCurrentNode(tree.length === 0 ? newTree[0] : newNode);
         setTree(newTree);
-        setInputValue("");
+        setInputValue("Node");
         setErrorValue("");
     }
 
@@ -41,6 +41,7 @@ export function useApp(treeData: TreeStructure[]) {
         const newTree = deepCopy(treeData);
         setTree(newTree);
         setCurrentNode(newTree[0]);
+        setInputValue("Node");
         setErrorValue("");
     }
 
@@ -57,12 +58,16 @@ export function useApp(treeData: TreeStructure[]) {
         const chosenNode = {...currentNode, name: inputValue.trim()};
         setTree(replaceNode(tree, chosenNode));
         setCurrentNode(chosenNode);
-        setInputValue("");
+        setInputValue("Node");
         setErrorValue("");
     }
 
     function handleChangeInputValue(e: React.ChangeEvent<HTMLInputElement>) {
         setInputValue(e.target.value);
+    }
+
+    function handleFocusInputValue (e: React.FocusEvent<HTMLInputElement>) {
+        e.target.select()
     }
 
     return {
@@ -71,12 +76,14 @@ export function useApp(treeData: TreeStructure[]) {
             errorValue,
             inputValue,
         },
-        currentNodeData: {currentNode, setCurrentNode},
         handlers: {
             handleAddNode,
             handleRemoveNode,
             handleResetChanges,
             handleEditNodeName,
-            handleChangeInputValue}
+            handleChangeInputValue,
+            handleFocusInputValue
+        },
+        currentNodeData: {currentNode, setCurrentNode},
     }
 }

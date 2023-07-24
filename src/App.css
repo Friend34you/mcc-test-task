@@ -1,12 +1,25 @@
 .App {
+  box-sizing: content-box;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  height: 80vh;
+  border-bottom: green 2px solid;
+  overflow: auto;
   color: green;
+}
+
+.App__interactive {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+}
+
+.App__interactive > * {
+  margin: 5px;
 }
 
 .App__input {
